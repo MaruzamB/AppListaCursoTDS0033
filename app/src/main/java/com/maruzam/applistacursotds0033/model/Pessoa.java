@@ -2,7 +2,6 @@ package com.maruzam.applistacursotds0033.model;
 
 public class Pessoa {
 
-    //criar os atributos
     private String primeiroNome;
     private String sobrenome;
     private String cursoDesejado;
@@ -12,10 +11,6 @@ public class Pessoa {
     public Pessoa() {
     }
 
-
-    //criar os get and sets
-
-
     public String getPrimeiroNome() {
         return primeiroNome;
     }
@@ -23,7 +18,6 @@ public class Pessoa {
     public void setPrimeiroNome(String primeiroNome) {
         this.primeiroNome = primeiroNome;
     }
-
 
 
     public String getSobrenome() {
@@ -49,8 +43,6 @@ public class Pessoa {
     public void setTelefoneContato(String telefoneContato) {
         this.telefoneContato = telefoneContato;
     }
-
-    //método toString
 
     @Override
     public String toString() {
