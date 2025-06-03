@@ -19,10 +19,6 @@ import com.maruzam.applistacursotds0033.model.Pessoa;
 public class MainActivity extends AppCompatActivity {
 
     Pessoa pessoa;
-    Pessoa outraPessoa;
-
-    String dadosPessoa;
-    String dadosOutrapessoa;
 
     EditText editPrimeiroNome;
     EditText editSobrenome;
@@ -32,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
     Button btnLimpar;
     Button btnSalvar;
     Button btnFinalizar;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,28 +40,15 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-
         pessoa = new Pessoa();
-
 
         pessoa.setPrimeiroNome("Maruzam");
         pessoa.setSobrenome("Bueno");
         pessoa.setCursoDesejado("Java");
         pessoa.setTelefoneContato("99999999");
 
-
-
-        outraPessoa = new Pessoa();
-
-        outraPessoa.setPrimeiroNome("Luke");
-        outraPessoa.setSobrenome("Skywalker");
-        outraPessoa.setCursoDesejado("Android");
-        outraPessoa.setTelefoneContato("Android");
-
-        //criar o metodo findViewById
-
         editPrimeiroNome = findViewById(R.id.editPrimeiroNome);
-        editSobrenome =  findViewById(R.id.editSobrenome);
+        editSobrenome = findViewById(R.id.editSobrenome);
         editCursoDesejado = findViewById(R.id.editNomeCurso);
         editTelefoneContato = findViewById(R.id.editTelefoneContato);
         btnLimpar = findViewById(R.id.btnLimpar);
@@ -77,8 +59,6 @@ public class MainActivity extends AppCompatActivity {
         editSobrenome.setText(pessoa.getCursoDesejado());
         editCursoDesejado.setText(pessoa.getCursoDesejado());
         editTelefoneContato.setText(pessoa.getTelefoneContato());
-
-        //criando os eventos/metodos
 
         btnLimpar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,54 +94,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //Recuperar os dados
-/*
-
-        dadosPessoa = "Primeiro Nome: ";
-        dadosPessoa += pessoa.getPrimeiroNome();
-        dadosPessoa += "Sobrenome: ";
-        dadosPessoa += pessoa.getSobrenome();
-        dadosPessoa += "Curso Desejado: ";
-        dadosPessoa += pessoa.getCursoDesejado();
-        dadosPessoa += "Telefone Contato: ";
-        dadosPessoa += pessoa.getTelefoneContato();
-*/
-
-        int parada = 0;
-
-        dadosOutrapessoa = "Primeiro Nome: ";
-        dadosOutrapessoa += outraPessoa.getPrimeiroNome();
-        dadosOutrapessoa += "Sobrenome: ";
-        dadosOutrapessoa += outraPessoa.getSobrenome();
-        dadosOutrapessoa += "Curso Desejado: ";
-        dadosOutrapessoa += outraPessoa.getCursoDesejado();
-        dadosOutrapessoa += "Telefone Contato: ";
-        dadosOutrapessoa += outraPessoa.getTelefoneContato();
-
-
-
-        //visualizar dados no log cat
-
         Log.i("POOAndroid", pessoa.toString());
-        Log.i("POOAndroid", outraPessoa.toString());
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     }
-
-
-
 
 
 }
