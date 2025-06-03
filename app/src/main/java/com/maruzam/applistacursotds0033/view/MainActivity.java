@@ -2,8 +2,10 @@ package com.maruzam.applistacursotds0033.view;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -43,12 +45,16 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+
         pessoa = new Pessoa();
+
 
         pessoa.setPrimeiroNome("Maruzam");
         pessoa.setSobrenome("Bueno");
         pessoa.setCursoDesejado("Java");
         pessoa.setTelefoneContato("99999999");
+
+
 
         outraPessoa = new Pessoa();
 
@@ -72,7 +78,44 @@ public class MainActivity extends AppCompatActivity {
         editCursoDesejado.setText(pessoa.getCursoDesejado());
         editTelefoneContato.setText(pessoa.getTelefoneContato());
 
+        //criando os eventos/metodos
+
+        btnLimpar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editPrimeiroNome.setText(" ");
+                editSobrenome.setText(" ");
+                editCursoDesejado.setText(" ");
+                editTelefoneContato.setText(" ");
+            }
+        });
+
+        btnFinalizar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Volte Sempre",
+                        Toast.LENGTH_LONG).show();
+                finish();
+            }
+        });
+
+        btnSalvar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pessoa.setPrimeiroNome(editPrimeiroNome.getText().toString());
+                pessoa.setSobrenome(editSobrenome.getText().toString());
+                pessoa.setCursoDesejado(editCursoDesejado.getText().toString());
+                pessoa.setTelefoneContato(editTelefoneContato.getText().toString());
+
+
+                Toast.makeText(MainActivity.this, "Dados Salvo: "
+                                + pessoa.toString(),
+                        Toast.LENGTH_LONG).show();
+            }
+        });
+
         //Recuperar os dados
+/*
 
         dadosPessoa = "Primeiro Nome: ";
         dadosPessoa += pessoa.getPrimeiroNome();
@@ -82,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
         dadosPessoa += pessoa.getCursoDesejado();
         dadosPessoa += "Telefone Contato: ";
         dadosPessoa += pessoa.getTelefoneContato();
+*/
 
         int parada = 0;
 
