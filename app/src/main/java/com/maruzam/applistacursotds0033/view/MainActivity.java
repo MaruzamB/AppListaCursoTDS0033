@@ -14,11 +14,13 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.maruzam.applistacursotds0033.R;
+import com.maruzam.applistacursotds0033.controller.PessoaController;
 import com.maruzam.applistacursotds0033.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
 
     Pessoa pessoa;
+    PessoaController controller;
 
     EditText editPrimeiroNome;
     EditText editSobrenome;
@@ -42,10 +44,10 @@ public class MainActivity extends AppCompatActivity {
 
         pessoa = new Pessoa();
 
-        pessoa.setPrimeiroNome("Maruzam");
-        pessoa.setSobrenome("Bueno");
-        pessoa.setCursoDesejado("Java");
-        pessoa.setTelefoneContato("99999999");
+        controller = new PessoaController();
+
+        controller.toString();
+
 
         editPrimeiroNome = findViewById(R.id.editPrimeiroNome);
         editSobrenome = findViewById(R.id.editSobrenome);
@@ -56,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         btnSalvar = findViewById(R.id.btnSalvar);
 
         editPrimeiroNome.setText(pessoa.getPrimeiroNome());
-        editSobrenome.setText(pessoa.getCursoDesejado());
+        editSobrenome.setText(pessoa.getSobrenome());
         editCursoDesejado.setText(pessoa.getCursoDesejado());
         editTelefoneContato.setText(pessoa.getTelefoneContato());
 
@@ -91,6 +93,8 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Dados Salvo: "
                                 + pessoa.toString(),
                         Toast.LENGTH_LONG).show();
+
+                controller.salvar(pessoa);
             }
         });
 
