@@ -8,7 +8,6 @@ public class Curso {
         this.CursoDesejado = cursoDesejado;
     }
 
-
     public String getCursoDesejado() {
         return CursoDesejado;
     }

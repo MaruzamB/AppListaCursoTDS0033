@@ -26,15 +26,12 @@ public class MainActivity extends AppCompatActivity {
 
     Pessoa pessoa;
     List<String> nomesCursos;
-
     PessoaController controller;
     CursoController cursoController;
-
     EditText editPrimeiroNome;
     EditText editSobrenome;
     EditText editCursoDesejado;
     EditText editTelefoneContato;
-
     Button btnLimpar;
     Button btnSalvar;
     Button btnFinalizar;
@@ -59,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
         controller.toString();
         cursoController = new CursoController();
         nomesCursos = cursoController.dadosSpinner();
-
 
         editPrimeiroNome = findViewById(R.id.editPrimeiroNome);
         editSobrenome = findViewById(R.id.editSobrenome);
@@ -98,7 +94,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_list_item_1,
                 cursoController.dadosSpinner());
         adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
         spinner.setAdapter(adapter);
@@ -121,6 +118,4 @@ public class MainActivity extends AppCompatActivity {
 
         Log.i("POOAndroid", pessoa.toString());
     }
-
-
 }
