@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">AppListaCursoTDS0033</string>
+    <string name="text_titulo">App Lista Curso</string>
+    <string name="text_hint_edit_primeiro_nome">Primeiro Nome</string>
+    <string name="text_hint_edit_sobrenome">Sobrenome</string>
+    <string name="text_hint_edit_curso_desejado">Curso Desejado</string>
+    <string name="text_hint_edit_telefone_contato">Telefone Contato</string>
+    <string name="text_button_limpar">Limpar</string>
+    <string name="text_button_salvar">Salvar</string>
+    <string name="text_button_finalizar">Finalizar</string>
+
+
+</resources>
